@@ -1,5 +1,5 @@
 const fs = require("fs");
-require("./system/config"); 
+require("../config"); 
 
 const handler = async (m, { reply, isCreator, text, cmd, command }) => {
 try {

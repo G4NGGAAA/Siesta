@@ -1,6 +1,6 @@
 const { downloadContentFromMessage } = require('@whiskeysockets/baileys')
 
-let handler = async (m, { conn }) => {
+let handler = async (m, { kzm }) => {
   if (!m.quoted) throw 'Send/Reply Images with the caption *.readviewonve*'
   if (m.quoted.mtype !== 'viewOnceMessageV2') throw 'Ini bukan pesan view-once.'
   let msg = m.quoted.message
@@ -11,9 +11,9 @@ let handler = async (m, { conn }) => {
     buffer = Buffer.concat([buffer, chunk])
   }
   if (/video/.test(type)) {
-    return conn.sendFile(m.chat, buffer, 'media.mp4', msg[type].caption || '', m)
+    return kzm.sendFile(m.chat, buffer, 'media.mp4', msg[type].caption || '', m)
   } else if (/image/.test(type)) {
-    return conn.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
+    return kzm.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
   }
 }
 

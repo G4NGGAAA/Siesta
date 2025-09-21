@@ -1,4 +1,4 @@
-require("./system/config")
+require("../config")
 const fs = require("fs");
 
 const handler = async  (m, { reply, text, command, prefix }) => {

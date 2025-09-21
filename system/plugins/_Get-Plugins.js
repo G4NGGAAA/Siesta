@@ -1,4 +1,4 @@
-require("./system/config")
+require("../config")
 const fs = require("fs")
 
 let handler = async (m, { kzm, isCreator, reply, text }) => {
